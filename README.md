@@ -2,7 +2,7 @@
 
 ### 보러가기: <https://camac0808.github.io/wave-animation>
 
-![메인페이지](mainpage.PNG)
+![메인페이지](mainpage.gif)
 
 ## 프로젝트에 사용된 언어 및 라이브러리
 
