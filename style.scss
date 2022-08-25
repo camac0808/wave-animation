@@ -1,0 +1,147 @@
+body {
+  padding: 0;
+  box-sizing: border-box; /* 박스영역은 테두리까지 지정, content가 조금 줄어들수도 있음*/
+  font-family: "Fira Code";
+}
+
+/* <!--========================================================
+                              HEADER
+    =========================================================--> */
+
+nav {
+  position: fixed;
+  height: 70px;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: #222;
+  ul {
+    list-style: none;
+    color: white;
+    line-height: 70px;
+    text-align: center;
+    padding: 0;
+    font-size: large;
+  }
+  li {
+    cursor: pointer;
+    &:hover {
+      color: crimson;
+      transition: all 0.3s;
+    }
+  }
+}
+
+/* <!--========================================================
+                              CONTENT
+    =========================================================--> */
+
+.container {
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  max-width: 100vw;
+  overflow: auto;
+  padding: 0;
+}
+
+.area {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  scroll-snap-align: start;
+  height: 100%;
+}
+
+.area:nth-child(1) {
+  background: linear-gradient(#8fe3cf, #256d85);
+}
+.area:nth-child(2) {
+  background: linear-gradient(#256d85, #2b4865);
+}
+.area:nth-child(3) {
+  background: linear-gradient(#2b4865, #002b5b);
+}
+.area:nth-child(4) {
+  background: linear-gradient(#002b5b, #041c32);
+}
+
+.box {
+  position: relative;
+  color: black;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 230px;
+  transform: translate3d(0, 0, 0);
+  overflow: hidden;
+}
+
+.icon {
+  animation: translateY 2s infinite alternate;
+  z-index: 1;
+  top: 65px;
+  left: 125px;
+  position: absolute;
+}
+
+.wave1 {
+  opacity: .4;
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+  position: absolute;
+  border-radius: 40%;
+  left: -35%;
+  top: 30%;
+  background: #def;
+  animation: rotating 7s infinite linear;
+}
+
+.wave2 {
+  opacity: .3;
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+  position: absolute;
+  border-radius: 40%;
+  background: #42ffd3;
+  background: linear-gradient(#42ffd3, rgba(66,255,211,0.5));
+  left: -40%;
+  top: 40%;
+  animation: rotating 9s infinite linear;
+}
+
+.wave3 {
+  opacity: .6;
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+  position: absolute;
+  border-radius: 43%;
+  background: linear-gradient(#0af, rgba(0,170,220,0.5));
+  left: -25%;
+  top: 45%;
+  animation: rotating 5s infinite linear;
+}
+
+@keyframes translateY {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translateY(-20%);
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg)
+  }
+}
